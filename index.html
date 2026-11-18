@@ -3,19 +3,36 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#10131c">
-  <title>Simple Calculator</title>
+  <meta name="theme-color" content="#160f25">
+  <meta name="description" content="A little love, one calculation at a time.">
+  <title>Snehitha — a little love in every number</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
 <body>
-  <main class="calculator" aria-label="Calculator">
-    <h1>Calculator</h1>
-    <div class="display" aria-live="polite" aria-atomic="true">
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <main class="calculator" aria-label="Snehitha calculator">
+    <header class="brand">
+      <span class="brand-mark" aria-hidden="true">♡</span>
+      <div>
+        <p class="eyebrow">A little love, in every number</p>
+        <h1>Snehitha</h1>
+      </div>
+      <span class="brand-sparkle" aria-hidden="true">✦</span>
+    </header>
+
+    <section class="display" aria-live="polite" aria-atomic="true" aria-label="Calculator display">
       <div id="previous-operand" class="previous-operand"></div>
       <output id="current-operand" class="current-operand" aria-label="Display">0</output>
-    </div>
-    <div class="keys">
+      <span class="display-heart" aria-hidden="true">♡</span>
+    </section>
+
+    <div class="keys" aria-label="Calculator keys">
       <button class="key utility" data-action="clear" aria-label="Clear all">AC</button>
       <button class="key utility" data-action="delete" aria-label="Delete last digit">DEL</button>
       <button class="key operator" data-value="/" aria-label="Divide">÷</button>
@@ -39,7 +56,25 @@
       <button class="key zero" data-value="0">0</button>
       <button class="key" data-value="." aria-label="Decimal point">.</button>
     </div>
-    <p class="hint">Use your keyboard or click the buttons</p>
+    <p class="hint"><span aria-hidden="true">✦</span> Use your keyboard or tap the buttons <span aria-hidden="true">✦</span></p>
   </main>
+
+  <div id="surprise" class="surprise" role="dialog" aria-modal="true" aria-labelledby="surprise-title" aria-describedby="surprise-message" hidden>
+    <div class="surprise-backdrop" data-dismiss-surprise></div>
+    <section class="surprise-card" tabindex="-1">
+      <button class="surprise-close" type="button" aria-label="Close surprise" data-dismiss-surprise>×</button>
+      <div class="celebration-particles" aria-hidden="true"></div>
+      <div class="surprise-content">
+        <span class="love-label"><span aria-hidden="true">✦</span> A LITTLE SURPRISE FOR YOU <span aria-hidden="true">✦</span></span>
+        <div class="hero-heart" aria-hidden="true">♡</div>
+        <h2 id="surprise-title" class="surprise-number">143 <span>❤️</span></h2>
+        <p id="surprise-message" class="love-message">143 ❤️ — I LOVE YOU</p>
+        <p class="special-message">You are Special!</p>
+        <div class="love-divider" aria-hidden="true"><span>✦</span><i></i><span>♡</span><i></i><span>✦</span></div>
+        <p class="surprise-footnote">Some things are simply beyond calculation.</p>
+        <button class="keep-smiling" type="button" data-dismiss-surprise>Keep smiling <span aria-hidden="true">♡</span></button>
+      </div>
+    </section>
+  </div>
 </body>
 </html>
